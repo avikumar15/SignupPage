@@ -35,12 +35,12 @@ export class SignUpComponent implements OnInit {
     
     let i=0;
     for(i=0; i<this.textEntries.length; i++) {
-      this.signUpModel[i]=(document.getElementById(this.textEntries[i]).value);
+      this.signUpModel[i]=(<HTMLInputElement>(document.getElementById(this.textEntries[i]))).value;
     }
     for(i=0; i<this.passwordEntries.length; i++) {
-      this.signUpModel[this.textEntries.length+i]=(document.getElementById(this.passwordEntries[i]).value);
+      this.signUpModel[this.textEntries.length+i]=(<HTMLInputElement>(document.getElementById(this.passwordEntries[i]))).value;
     }
-    this.signUpModel[this.textEntries.length+this.passwordEntries.length]=(document.getElementById(this.dateEntries[0]).value);
+    this.signUpModel[this.textEntries.length+this.passwordEntries.length]=(<HTMLInputElement>(document.getElementById(this.dateEntries[0]))).value;
 
     let isRegistrationComplete=true
 
